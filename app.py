@@ -20,6 +20,7 @@ st.markdown(
 
 
 
+
 # Load the trained model
 model = joblib.load('model.pkl')  # make sure this is the correct filename
 scaler=joblib.load('scaler.pkl')
@@ -117,6 +118,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
