@@ -119,7 +119,41 @@ else:
     else:
         st.warning("Poor or no credit history.")
 
-   
+   # --- Generate downloadable PDF report ---
+if st.button("Download Result as PDF"):
+    result_text = "✅ Loan Approved!" if prediction == 'Y' else "❌ Loan Rejected."
+    
+    buffer = BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(50, height - 50, "Loan Prediction Result")
+
+    c.setFont("Helvetica", 12)
+    c.drawString(50, height - 100, f"Prediction: {result_text}")
+    c.drawString(50, height - 130, f"Applicant Income: {applicant_income}")
+    c.drawString(50, height - 150, f"Coapplicant Income: {coapplicant_income}")
+    c.drawString(50, height - 170, f"Loan Amount: {loan_amount}")
+    c.drawString(50, height - 190, f"Loan Term: {loan_term} months")
+    c.drawString(50, height - 210, f"Credit History: {'Good' if credit_history == 1.0 else 'Poor/None'}")
+    c.drawString(50, height - 230, f"Property Area: {property_area}")
+
+    c.drawString(50, height - 270, "Thank you for using the Loan Prediction App!")
+    
+    c.showPage()
+    c.save()
+    
+    buffer.seek(0)
+    
+    st.download_button(
+        label="📥 Download PDF",
+        data=buffer,
+        file_name="loan_prediction_result.pdf",
+        mime="application/pdf"
+    )
+
+
 
 
 
