@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://images.unsplash.com/photo-1605902711622-cfb43c4437b2");
+        background-image: url("https://www.freepik.com/free-photo/top-view-finances-elements-arrangement-with-copy-space_11621090.htm#fromView=search&page=1&position=1&uuid=acee42a2-2e54-4b11-b3d5-1ea1697bafe1&query=Website+Background+for+loan");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -118,6 +118,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
