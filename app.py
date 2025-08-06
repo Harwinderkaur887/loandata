@@ -63,3 +63,33 @@ if st.button("Predict Loan Approval"):
 
 
         st.error("❌ Loan will be Rejected.")
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Visual 1: Bar chart - Income vs Loan Amount
+st.subheader("📊 Income vs Loan Amount")
+fig, ax = plt.subplots()
+bars = ax.bar(['Applicant Income', 'Coapplicant Income', 'Loan Amount'],
+              [applicant_income, coapplicant_income, loan_amount],
+              color=['skyblue', 'orange', 'green'])
+ax.set_ylabel("Amount")
+ax.set_title("Income and Loan Overview")
+st.pyplot(fig)
+
+# Visual 2: Pie chart - Property Area
+st.subheader("🏘️ Property Area Distribution (Sample Input)")
+area_counts = input_data['Property_Area'].value_counts()
+fig2, ax2 = plt.subplots()
+ax2.pie(area_counts, labels=area_counts.index, autopct='%1.1f%%', startangle=90)
+ax2.set_title("Property Area Chosen")
+st.pyplot(fig2)
+
+# Visual 3: Credit History Gauge (simple)
+st.subheader("💳 Credit History Status")
+if credit_history == 1.0:
+    st.success("Good Credit History")
+else:
+    st.warning("Poor or No Credit History")
+
+
