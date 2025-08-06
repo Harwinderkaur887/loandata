@@ -3,20 +3,24 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# Background color using custom CSS
-st.markdown(
-    """
+st.markdown("""
     <style>
-    body {
-        background-color: #e8f5e9;
-    }
     .stApp {
-        background-color: #e8f5e9;
+        background-color: #0E1117;
+        color: #FAFAFA;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .css-1d391kg {  /* Sidebar background */
+        background-color: #262730 !important;
+    }
+
+    .css-10trblm {  /* Main title */
+        color: #00FFAA !important;
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+    """, unsafe_allow_html=True)
+
 
 # Load the trained model
 model = joblib.load('model.pkl')  # make sure this is the correct filename
@@ -115,6 +119,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
