@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 def set_bg_from_local(image_file):
-    with open(https://www.freepik.com/free-photo/top-view-finances-elements-arrangement-with-copy-space_11621090.htm#fromView=search&page=1&position=1&uuid=acee42a2-2e54-4b11-b3d5-1ea1697bafe1&query=Website+Background+for+loan, "rb") as file:
+    with open("https://www.freepik.com/free-photo/top-view-finances-elements-arrangement-with-copy-space_11621090.htm#fromView=search&page=1&position=1&uuid=acee42a2-2e54-4b11-b3d5-1ea1697bafe1&query=Website+Background+for+loan", "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
     st.markdown(
         f"""
@@ -120,6 +120,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
