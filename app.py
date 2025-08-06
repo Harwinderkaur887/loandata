@@ -3,13 +3,9 @@ import pandas as pd
 import numpy as np
 import joblib
 
-import streamlit as st
-import joblib
-import numpy as np
-
 # Load trained model
 model = joblib.load("model.pkl")
-scaler=joblib.load("scaler.pkl")
+scaler= joblib.load("scaler.pkl")
 
 # Optional: Load a preprocessor if used during training
 # preprocessor = joblib.load("preprocessor.pkl")
@@ -60,6 +56,7 @@ if st.button("Predict Loan Status"):
         st.success("✅ Loan will likely be Approved!")
     else:
         st.error("❌ Loan will likely be Rejected.")
+
 
 
 
