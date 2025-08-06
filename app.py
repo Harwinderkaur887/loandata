@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib  # or pickle
+import joblib
 
 # Load the trained model
 model = joblib.load('model.pkl')  # make sure this is the correct filename
@@ -60,5 +60,6 @@ if st.button("Predict Loan Approval"):
     if prediction == 'Y':
         st.success("✅ Loan will be Approved!")
     else:
+
 
         st.error("❌ Loan will be Rejected.")
