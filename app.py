@@ -2,6 +2,24 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://www.freepik.com/free-photo/top-view-finances-elements-arrangement-with-copy-space_11621090.htm#fromView=search&page=1&position=1&uuid=acee42a2-2e54-4b11-b3d5-1ea1697bafe1&query=Website+Background+for+loan"); /* You can replace this with any direct image link */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
@@ -102,6 +120,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
