@@ -10,7 +10,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://img.freepik.com/premium-vector/loan-logo-design-icon-vector_999827-1718.jpg?w=2000"); /* You can replace this with any direct image link */
+        background-image: url("https://www.freepik.com/free-vector/digital-rupee-technology-background-design_23446153.htm"); /* You can replace this with any direct image link */
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -120,6 +120,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
