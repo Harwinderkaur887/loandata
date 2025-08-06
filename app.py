@@ -92,6 +92,25 @@ if credit_history == 1.0:
 else:
     st.warning("Poor or No Credit History")
 
+# Visual 3: Credit History Status
+    st.subheader("💳 Credit History Status")
+    if credit_history == 1.0:
+        st.success("Good credit history.")
+    else:
+        st.warning("Poor or no credit history.")
+
+    # Visual 4: Loan to Income Ratio
+    st.subheader("📉 Loan to Income Ratio")
+    total_income = applicant_income + coapplicant_income
+    loan_income_ratio = loan_amount / total_income if total_income > 0 else 0
+    st.metric("Loan to Income Ratio", f"{loan_income_ratio:.2f}")
+    if loan_income_ratio < 0.2:
+        st.success("Healthy ratio ✅")
+    elif loan_income_ratio < 0.4:
+        st.warning("Moderate ratio ⚠️")
+    else:
+        st.error("High ratio ❌")
+
 
 
 
