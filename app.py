@@ -64,7 +64,8 @@ if st.button("Predict Loan Approval"):
 
         st.error("❌ Loan will be Rejected.")
 
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Visual 1: Bar chart - Income vs Loan Amount
 st.subheader("📊 Income vs Loan Amount")
@@ -90,6 +91,7 @@ if credit_history == 1.0:
     st.success("Good Credit History")
 else:
     st.warning("Poor or No Credit History")
+
 
 
 
