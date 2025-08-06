@@ -151,46 +151,45 @@ else:
    # --- Generate downloadable PDF report ---
 
 # Predict button
-if st.button("Predict Loan Approval"):
+if st.button("🔍 Predict Loan Approval"):
     prediction = model.predict(input_processed)[0]
+    result_text = "✅ Loan will be Approved!" if prediction == 'Y' else "❌ Loan will be Rejected."
     
     if prediction == 'Y':
-        st.success("✅ Loan will be Approved!")
+        st.success(result_text)
     else:
-        st.error("❌ Loan will be Rejected.")
+        st.error(result_text)
 
-    # --- Generate downloadable PDF report ---
-    result_text = "✅ Loan Approved!" if prediction == 'Y' else "❌ Loan Rejected."
-    
+    # ----- PDF generation -----
     buffer = BytesIO()
     c = canvas.Canvas(buffer, pagesize=letter)
-    width, height = letter
-    
-    c.setFont("Helvetica-Bold", 16)
-    c.drawString(50, height - 50, "Loan Prediction Result")
-
     c.setFont("Helvetica", 12)
-    c.drawString(50, height - 100, f"Prediction: {result_text}")
-    c.drawString(50, height - 130, f"Applicant Income: {applicant_income}")
-    c.drawString(50, height - 150, f"Coapplicant Income: {coapplicant_income}")
-    c.drawString(50, height - 170, f"Loan Amount: {loan_amount}")
-    c.drawString(50, height - 190, f"Loan Term: {loan_term} months")
-    c.drawString(50, height - 210, f"Credit History: {'Good' if credit_history == 1.0 else 'Poor/None'}")
-    c.drawString(50, height - 230, f"Property Area: {property_area}")
-
-    c.drawString(50, height - 270, "Thank you for using the Loan Prediction App!")
+    c.drawString(50, 750, "Loan Prediction Report")
+    c.line(50, 745, 550, 745)
     
-    c.showPage()
+    c.drawString(50, 720, f"Prediction Result: {result_text}")
+    c.drawString(50, 700, f"Gender: {gender}")
+    c.drawString(50, 685, f"Married: {married}")
+    c.drawString(50, 670, f"Dependents: {dependents}")
+    c.drawString(50, 655, f"Education: {education}")
+    c.drawString(50, 640, f"Self Employed: {self_employed}")
+    c.drawString(50, 625, f"Applicant Income: {applicant_income}")
+    c.drawString(50, 610, f"Coapplicant Income: {coapplicant_income}")
+    c.drawString(50, 595, f"Loan Amount: {loan_amount}")
+    c.drawString(50, 580, f"Loan Term: {loan_term}")
+    c.drawString(50, 565, f"Credit History: {credit_history}")
+    c.drawString(50, 550, f"Property Area: {property_area}")
+    
     c.save()
-    
     buffer.seek(0)
-    
+
     st.download_button(
-        label="📥 Download PDF",
+        label="📄 Download Result as PDF",
         data=buffer,
-        file_name="loan_prediction_result.pdf",
+        file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
