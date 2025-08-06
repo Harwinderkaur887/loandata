@@ -3,6 +3,21 @@ import pandas as pd
 import numpy as np
 import joblib
 
+# Background color using custom CSS
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f4f5;
+    }
+    .stApp {
+        background-color: #f0f4f5;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Load the trained model
 model = joblib.load('model.pkl')  # make sure this is the correct filename
 scaler=joblib.load('scaler.pkl')
@@ -99,17 +114,8 @@ else:
     else:
         st.warning("Poor or no credit history.")
 
-    # Visual 4: Loan to Income Ratio
-    st.subheader("📉 Loan to Income Ratio")
-    total_income = applicant_income + coapplicant_income
-    loan_income_ratio = loan_amount / total_income if total_income > 0 else 0
-    st.metric("Loan to Income Ratio", f"{loan_income_ratio:.2f}")
-    if loan_income_ratio < 0.2:
-        st.success("Healthy ratio ✅")
-    elif loan_income_ratio < 0.4:
-        st.warning("Moderate ratio ⚠️")
-    else:
-        st.error("High ratio ❌")
+   
+
 
 
 
