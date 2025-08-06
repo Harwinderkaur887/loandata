@@ -3,13 +3,20 @@ import pandas as pd
 import numpy as np
 import joblib
 
-st.markdown("""
+st.markdown(
+    """
     <style>
     .stApp {
-        background-color: #F8F9FA;
+        background-image: url("https://images.unsplash.com/photo-1605902711622-cfb43c4437b2");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
     }
     </style>
-    """, unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 
 
@@ -110,6 +117,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
