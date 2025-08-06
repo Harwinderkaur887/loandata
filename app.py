@@ -120,7 +120,17 @@ else:
         st.warning("Poor or no credit history.")
 
    # --- Generate downloadable PDF report ---
-if st.button("Download Result as PDF"):
+
+# Predict button
+if st.button("Predict Loan Approval"):
+    prediction = model.predict(input_processed)[0]
+    
+    if prediction == 'Y':
+        st.success("✅ Loan will be Approved!")
+    else:
+        st.error("❌ Loan will be Rejected.")
+
+    # --- Generate downloadable PDF report ---
     result_text = "✅ Loan Approved!" if prediction == 'Y' else "❌ Loan Rejected."
     
     buffer = BytesIO()
@@ -152,17 +162,6 @@ if st.button("Download Result as PDF"):
         file_name="loan_prediction_result.pdf",
         mime="application/pdf"
     )
-
-
-
-
-
-
-
-
-
-
-
 
 
 
