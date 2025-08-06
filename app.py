@@ -8,10 +8,10 @@ st.markdown(
     """
     <style>
     body {
-        background-color: #f0f4f5;
+        background-color: #e8f5e9;
     }
     .stApp {
-        background-color: #f0f4f5;
+        background-color: #e8f5e9;
     }
     </style>
     """,
@@ -115,6 +115,7 @@ else:
         st.warning("Poor or no credit history.")
 
    
+
 
 
 
