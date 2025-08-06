@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load the trained model
 model = joblib.load('model.pkl')  # make sure this is the correct filename
@@ -92,6 +90,7 @@ if credit_history == 1.0:
     st.success("Good Credit History")
 else:
     st.warning("Poor or No Credit History")
+
 
 
 
