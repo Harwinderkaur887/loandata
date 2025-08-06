@@ -8,7 +8,7 @@ model = joblib.load("model.pkl")
 scaler= joblib.load("scaler.pkl")
 
 # Optional: Load a preprocessor if used during training
-preprocessor = joblib.load("preprocessor.pkl")
+#preprocessor = joblib.load("preprocessor.pkl")
 
 st.title("🏦 Loan Eligibility Prediction App")
 
@@ -56,6 +56,7 @@ if st.button("Predict Loan Status"):
         st.success("✅ Loan will likely be Approved!")
     else:
         st.error("❌ Loan will likely be Rejected.")
+
 
 
 
