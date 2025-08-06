@@ -9,6 +9,35 @@ from reportlab.pdfgen import canvas
 st.markdown(
     """
     <style>
+    /* Make sidebar background black */
+    [data-testid="stSidebar"] {
+        background-color: #000000;
+        color: white;
+    }
+
+    /* Optional: Change input text and label colors */
+    [data-testid="stSidebar"] label, 
+    [data-testid="stSidebar"] .stTextInput,
+    [data-testid="stSidebar"] .stNumberInput,
+    [data-testid="stSidebar"] .stSelectbox {
+        color: white;
+    }
+
+    /* Optional: change header color in sidebar */
+    .sidebar .sidebar-content h1,
+    .sidebar .sidebar-content h2,
+    .sidebar .sidebar-content h3 {
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+st.markdown(
+    """
+    <style>
     .stApp {
         background-image: url("https://img.freepik.com/free-photo/top-view-finances-elements-arrangement-with-copy-space_23-2148793719.jpg?ga=GA1.1.806108855.1754501801&semt=ais_incoming&w=740&q=80"); /* You can replace this with any direct image link */
         background-size: cover;
@@ -162,6 +191,7 @@ if st.button("Predict Loan Approval"):
         file_name="loan_prediction_result.pdf",
         mime="application/pdf"
     )
+
 
 
 
