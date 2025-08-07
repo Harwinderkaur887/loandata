@@ -132,11 +132,6 @@ k1.markdown('<div class="panel-light"><h4 style="margin:4px">Applicant Income</h
 k2.markdown('<div class="panel-light"><h4 style="margin:4px">Coapplicant Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(coapplicant_income), unsafe_allow_html=True)
 k3.markdown('<div class="panel-light"><h4 style="margin:4px">Total Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(total_income), unsafe_allow_html=True)
 
-
-
-
-
-
    # --- Generate downloadable PDF report ---
 
 # Predict button
@@ -178,6 +173,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
