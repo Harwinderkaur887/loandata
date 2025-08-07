@@ -126,14 +126,12 @@ ax.set_ylabel("Amount")
 ax.set_title("Income and Loan Overview")
 st.pyplot(fig)
 
+total_income = applicant_income + coapplicant_income
+    k1, k2, k3 = st.columns(3)
+    k1.markdown('<div class="panel-light"><h4 style="margin:4px">Applicant Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(applicant_income), unsafe_allow_html=True)
+    k2.markdown('<div class="panel-light"><h4 style="margin:4px">Coapplicant Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(coapplicant_income), unsafe_allow_html=True)
+    k3.markdown('<div class="panel-light"><h4 style="margin:4px">Total Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(total_income), unsafe_allow_html=True
 
-
-# Visual 3: Credit History Gauge (simple)
-st.subheader("💳 Credit History Status")
-if credit_history == 1.0:
-    st.success("Good Credit History")
-else:
-    st.warning("Poor or No Credit History")
 
 # Visual 3: Credit History Status
     st.subheader("💳 Credit History Status")
@@ -183,6 +181,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
