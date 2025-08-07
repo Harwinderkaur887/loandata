@@ -134,7 +134,7 @@ k3.markdown('<div class="panel-light"><h4 style="margin:4px">Total Income</h4><h
 
 
 # Visual 3: Credit History Status
-    st.subheader("💳 Credit History Status")
+st.subheader("💳 Credit History Status")
     if credit_history == 1.0:
         st.success("Good credit history.")
     else:
@@ -181,6 +181,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
