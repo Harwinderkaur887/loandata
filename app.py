@@ -133,12 +133,7 @@ k2.markdown('<div class="panel-light"><h4 style="margin:4px">Coapplicant Income<
 k3.markdown('<div class="panel-light"><h4 style="margin:4px">Total Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(total_income), unsafe_allow_html=True)
 
 
-# Visual 3: Credit History Status
-st.subheader("💳 Credit History Status")
-    if credit_history == 1.0:
-        st.success("Good credit history.")
-    else:
-        st.warning("Poor or no credit history.")
+
 
    # --- Generate downloadable PDF report ---
 
@@ -181,6 +176,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
