@@ -129,7 +129,7 @@ st.pyplot(fig)
 # Visual 2: Pie chart - Property Area
 st.subheader("🏘️ Property Area Distribution (Based on user Input)")
 filtered_df=input_data[input_data["Property_Area"]==property_area]
-credit_counts=filtered_df["credit_History"].value_counts()
+credit_counts=filtered_df["Credit_History"].value_counts()
 fig2, ax2 = plt.subplots()
 ax2.pie(area_counts, labels=credit_counts.index, autopct='%1.1f%%', startangle=90)
 ax2.set_title("Property Area Chosen")
@@ -190,6 +190,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
