@@ -133,29 +133,6 @@ k2.markdown('<div class="panel-light"><h4 style="margin:4px">Coapplicant Income<
 k3.markdown('<div class="panel-light"><h4 style="margin:4px">Total Income</h4><h3 style="margin:4px">{:.2f}</h3></div>'.format(total_income), unsafe_allow_html=True)
 
 
-# Start of prediction block
-if st.button("Predict Loan Approval"):
-    prediction = model.predict(input_processed)[0]
-    result_text = "✅ Loan Approved!" if prediction == 'Y' else "❌ Loan Rejected."
-    st.success(result_text)
-
-    # 📊 Visuals section
-    st.subheader("📊 Income vs Loan Amount")
-    fig, ax = plt.subplots()
-    bars = ax.bar(['Applicant Income', 'Coapplicant Income', 'Loan Amount'],
-                  [applicant_income, coapplicant_income, loan_amount],
-                  color=['skyblue', 'orange', 'green'])
-    ax.set_ylabel("Amount")
-    ax.set_title("Income and Loan Overview")
-    st.pyplot(fig)
-
-    # 🏘️ Property Area
-    st.subheader("🏘️ Property Area Distribution (Sample Input)")
-    area_counts = input_data['Property_Area'].value_counts()
-    fig2, ax2 = plt.subplots()
-    ax2.pie(area_counts, labels=area_counts.index, autopct='%1.1f%%', startangle=90)
-    ax2.set_title("Property Area Chosen")
-    st.pyplot(fig2)
 
     # 💳 Credit History Status
     st.subheader("💳 Credit History Status")
@@ -206,6 +183,7 @@ if st.button("🔍 Predict Loan Approval"):
         file_name="loan_prediction_report.pdf",
         mime="application/pdf"
     )
+
 
 
 
